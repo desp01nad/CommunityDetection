@@ -1,7 +1,6 @@
-import itertools
+import os
 
 import networkx as nx
-import os
 
 from matplotlib import pyplot as plt
 from networkx.algorithms.cuts import conductance
@@ -9,8 +8,9 @@ from sklearn.cluster import SpectralClustering
 
 from networkx.algorithms.community.quality import modularity
 
-DATA_PATH = "data/facebook_combined.txt"
-OUTPUT_DIR = "outputs"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "data", "facebook_combined.txt")
+OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 
 
 def load_graph():
