@@ -461,10 +461,7 @@ def main():
 
     display_subgraph_information(small_graph)
 
-    # run_girvan_newman(small_graph, k=2)
-    # run_girvan_newman(small_graph, k=3)
     girvan_newman_results = run_girvan_newman(small_graph, k=4)
-    # run_girvan_newman(small_graph, k=5)
 
     spectral_results = run_spectral_clustering(
         graph, k=louvain_results["number_of_communities"]
